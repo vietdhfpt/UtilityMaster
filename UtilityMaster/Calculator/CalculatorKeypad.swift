@@ -15,7 +15,7 @@ protocol CalculatorKeypadDelegate : class {
 class CalculatorKeypad: UIViewController {
     
     @IBOutlet weak var keypadCollectionView: UICollectionView!
-    var buttonWidth : CGFloat = 66.0
+    var buttonWidth : CGFloat = 65.0
     var buttonHeight : CGFloat = 80.0
     var typedNumber : String = "0"
     var truncatedNumber : String = "0"
@@ -152,29 +152,29 @@ extension CalculatorKeypad: UICollectionViewDelegate, UICollectionViewDataSource
     
     func updateCollectionViewLayoutForPortrait() {
         let flowLayout = keypadCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        buttonWidth = 66.0
+        buttonWidth = 65.0
         buttonHeight = 80.0
-        flowLayout!.minimumInteritemSpacing = 2
-        flowLayout!.minimumLineSpacing = 4
+        flowLayout!.minimumInteritemSpacing = 5
+        flowLayout!.minimumLineSpacing = 5
         flowLayout!.invalidateLayout()
         calc.maxDisplayableChars = 10
     }
-//
-//    func updateCollectionViewLayoutForLandscape() {
-//        let flowLayout = keypadCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
-//        buttonWidth = 165.0
-//        buttonHeight = 80.0
-//        flowLayout!.minimumInteritemSpacing = 2
-//        flowLayout!.minimumLineSpacing = 4
-//        flowLayout!.invalidateLayout()
-//        calc.maxDisplayableChars = 14
-//    }
+
+    func updateCollectionViewLayoutForLandscape() {
+        let flowLayout = keypadCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        buttonWidth = 119.0
+        buttonHeight = 60.0
+        flowLayout!.minimumInteritemSpacing = 5
+        flowLayout!.minimumLineSpacing = 5
+        flowLayout!.invalidateLayout()
+        calc.maxDisplayableChars = 14
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if self.isViewLoaded == true {
             if size.width > size.height {
-//                self.updateCollectionViewLayoutForLandscape()
+                self.updateCollectionViewLayoutForLandscape()
             }
             else{
                 self.updateCollectionViewLayoutForPortrait()

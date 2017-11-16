@@ -8,28 +8,62 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController, CalculatorKeypadDelegate {
 
+    @IBOutlet weak var keypadHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var resultsTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var formulaTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var equationLabel: UILabel!
+    @IBOutlet weak var resultsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.equationLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        
+        if UIApplication.shared.statusBarOrientation.isPortrait {
+            //Portrait
+            keypadHeightConstraint.constant = 420
+            resultsTopConstraint.constant = 102.0
+            formulaTopConstraint.constant = 24.0
+        }
+        else {
+            //Landscape
+            keypadHeightConstraint.constant = 200
+            resultsTopConstraint.constant = 5.0
+            formulaTopConstraint.constant = 10.0
+        }
+        
+        for childVC in self.childViewControllers {
+            if childVC.isKind(of: CalculatorKeypad.classForCoder())
+            {
+                let keyPadVC = childVC as? CalculatorKeypad
+                keyPadVC?.delegate = self
+            }
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if self.isViewLoaded{
+            if size.width > size.height {
+                //Landscape
+                keypadHeightConstraint.constant = 200
+                resultsTopConstraint.constant = 5.0
+                formulaTopConstraint.constant = 10.0
+            } else {
+                //Portrait
+                keypadHeightConstraint.constant = 420
+                resultsTopConstraint.constant = 102.0
+                formulaTopConstraint.constant = 24.0
+            }
+        }
     }
-    */
-
+    
+    //MARK: - KeyPad Delegates
+    func updateCalculatorLabels(withEquation eqString: String, andResult resultsString : String) {
+        self.equationLabel.text = eqString
+        self.resultsLabel.text = resultsString
+    }
 }

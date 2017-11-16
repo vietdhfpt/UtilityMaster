@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4d-bT-2dc">
-                                        <rect key="frame" x="37" y="32" width="367" height="37"/>
+                                        <rect key="frame" x="37" y="33" width="367" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="mNG-Xs-1q7"/>
                                         </constraints>
@@ -158,7 +158,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Sq4-bl-mbF" secondAttribute="trailing" id="Q2t-8u-6F1"/>
                                     <constraint firstItem="dVA-kE-RCQ" firstAttribute="leading" secondItem="TWr-xU-MkB" secondAttribute="leading" constant="40" id="YdQ-Qs-Ffe"/>
                                     <constraint firstItem="K4d-bT-2dc" firstAttribute="leading" secondItem="TWr-xU-MkB" secondAttribute="leading" constant="37" id="kYh-AZ-OjC"/>
-                                    <constraint firstItem="K4d-bT-2dc" firstAttribute="top" secondItem="TWr-xU-MkB" secondAttribute="top" constant="32" id="nTj-B0-Ngw"/>
+                                    <constraint firstItem="K4d-bT-2dc" firstAttribute="top" secondItem="TWr-xU-MkB" secondAttribute="top" constant="33" id="nTj-B0-Ngw"/>
                                     <constraint firstAttribute="trailing" secondItem="K4d-bT-2dc" secondAttribute="trailing" constant="10" id="pQu-qw-oLG"/>
                                     <constraint firstAttribute="bottom" secondItem="Sq4-bl-mbF" secondAttribute="bottom" id="xN0-Qd-zqP"/>
                                 </constraints>
@@ -172,6 +172,13 @@
                             <constraint firstItem="TWr-xU-MkB" firstAttribute="leading" secondItem="GAw-1z-qtY" secondAttribute="leading" id="cDI-OX-2Nk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="equationLabel" destination="K4d-bT-2dc" id="BiI-eO-3Hn"/>
+                        <outlet property="formulaTopConstraint" destination="nTj-B0-Ngw" id="qMA-36-yfR"/>
+                        <outlet property="keypadHeightConstraint" destination="g2m-da-Did" id="CXl-Py-ImO"/>
+                        <outlet property="resultsLabel" destination="dVA-kE-RCQ" id="jZU-mt-0qf"/>
+                        <outlet property="resultsTopConstraint" destination="1sb-xI-A3Z" id="XVI-2j-ZUo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuo-Ad-vPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,23 +199,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-BS-hWB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Rrr-ni-NUj">
-                                    <size key="itemSize" width="67" height="84"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="Rrr-ni-NUj">
+                                    <size key="itemSize" width="65" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryClear" id="G2g-HA-J2F" userLabel="MemoryClear" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MC" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-jP-IjR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -227,23 +233,23 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BlankSpace" id="jQe-1L-zTE" userLabel="BlankSpace" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="69.333333333333329" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="69.666666666666671" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                         <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CE" id="Rwx-dS-DIf" userLabel="CE" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="138.66666666666666" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="139.66666666666666" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cM-fZ-eSb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -259,14 +265,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Clear" id="bCu-NF-dxG" userLabel="C" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="208.33333333333334" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="209.33333333333334" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-v0-cEY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -282,14 +288,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BackSpace" id="l5E-cC-zXW" userLabel="BackSpace" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="277.66666666666669" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="279.33333333333331" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_backspace" translatesAutoresizingMaskIntoConstraints="NO" id="GWh-1n-vlF">
-                                                    <rect key="frame" x="13" y="22" width="40" height="40"/>
+                                                    <rect key="frame" x="12" y="20" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="ESf-k1-1qK"/>
                                                         <constraint firstAttribute="height" constant="40" id="Okt-LZ-U4n"/>
@@ -304,14 +310,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Divide" id="vjD-DP-4uv" userLabel="Divide" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="347" y="0.0" width="67" height="84"/>
+                                        <rect key="frame" x="349" y="0.0" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="÷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adx-h5-NS5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -327,14 +333,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryRecall" id="7kr-v0-vnN" userLabel="MemoryRecall" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="0.0" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDC-Ja-L3j">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -353,14 +359,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Square" id="swm-4U-DCH" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="69.333333333333329" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="69.666666666666671" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEs-mt-gMB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -376,14 +382,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Seven" id="ISk-T9-Cjf" userLabel="Seven" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="138.66666666666666" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="139.66666666666666" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-qO-DKV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -399,14 +405,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Eight" id="MWt-x3-b2a" userLabel="Eight" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="208.33333333333334" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="209.33333333333334" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH4-2B-qev">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -422,14 +428,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Nine" id="e1I-od-0D2" userLabel="Nine" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="277.66666666666669" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="279.33333333333331" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RH-Aq-gq0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -445,14 +451,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Multiply" id="7qr-YU-U5M" userLabel="Multiply" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="347" y="84" width="67" height="84"/>
+                                        <rect key="frame" x="349" y="85" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIJ-5h-EtY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -468,14 +474,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryPlus" id="fDa-Eo-Tl4" userLabel="MemoryPlus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="0.0" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrG-PN-0kH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -491,14 +497,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Inverse" id="s9o-Rv-zDy" userLabel="1/x" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="69.333333333333329" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="69.666666666666671" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ro-32-buT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -514,14 +520,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Four" id="MdM-XH-sfL" userLabel="Four" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="138.66666666666666" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="139.66666666666666" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78O-Tn-b1r">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -537,14 +543,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Five" id="chB-cr-IfD" userLabel="Five" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="208.33333333333334" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="209.33333333333334" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iks-gM-sHg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -560,14 +566,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Six" id="Iul-gq-9tT" userLabel="Six" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="277.66666666666669" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="279.33333333333331" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-zG-g7K">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -583,14 +589,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Minus" id="YnO-nd-s8m" userLabel="Minus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="347" y="168" width="67" height="84"/>
+                                        <rect key="frame" x="349" y="170" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-L1-HGG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -606,14 +612,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryMinus" id="9gw-SI-U82" userLabel="MemoryMinus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="0.0" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksG-qM-YxF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -629,14 +635,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SquareRoot" id="dIW-cr-BzR" userLabel="SquareRoot" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="69.333333333333329" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="69.666666666666671" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_radical_sign" translatesAutoresizingMaskIntoConstraints="NO" id="8tx-uu-GP7">
-                                                    <rect key="frame" x="25" y="34" width="16" height="16"/>
+                                                    <rect key="frame" x="17.666666666666664" y="25" width="29.999999999999993" height="30"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -647,14 +653,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="One" id="jVC-aR-Mf2" userLabel="One" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="138.66666666666666" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="139.66666666666666" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1N-dh-BAC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -670,14 +676,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Two" id="BAK-l5-KFF" userLabel="Two" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="208.33333333333334" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="209.33333333333334" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbG-Q8-BQk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -693,14 +699,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Three" id="RAc-Ge-vtc" userLabel="Three" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="277.66666666666669" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="279.33333333333331" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-M2-x4D">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -716,14 +722,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Add" id="YNS-uD-J25" userLabel="Add" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="347" y="252" width="67" height="84"/>
+                                        <rect key="frame" x="349" y="255" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFa-XD-rhg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -739,14 +745,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryStore" id="bML-w3-zyf" userLabel="MemoryStore" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="0.0" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMJ-rv-z5b">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -762,14 +768,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Percentage" id="Lpc-71-KXX" userLabel="Percentage" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="69.333333333333329" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="69.666666666666671" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGC-Ws-8fA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -785,14 +791,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChangeSign" id="GgZ-PI-ueK" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="138.66666666666666" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="139.66666666666666" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+/-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-S9-F7C">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -808,14 +814,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Zero" id="SMV-XG-ipf" userLabel="Zero" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="208.33333333333334" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="209.33333333333334" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG9-ev-TbL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -831,14 +837,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DecimalPoint" id="m4j-Zz-6u0" userLabel="DecimalPoint" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="277.66666666666669" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="279.33333333333331" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-c8-NY9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -854,14 +860,14 @@
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EqualsTo" id="Fjh-Wm-mS7" userLabel="EqualsTo" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
-                                        <rect key="frame" x="347" y="336" width="67" height="84"/>
+                                        <rect key="frame" x="349" y="340" width="65" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-Vu-r9B">
-                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -955,7 +961,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_backspace" width="16" height="16"/>
-        <image name="ic_radical_sign" width="16" height="16"/>
+        <image name="ic_backspace" width="40" height="40"/>
+        <image name="ic_radical_sign" width="30" height="30"/>
     </resources>
 </document>
