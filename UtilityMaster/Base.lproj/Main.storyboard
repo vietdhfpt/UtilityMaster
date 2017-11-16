@@ -111,6 +111,10 @@
         <scene sceneID="x9f-5b-S97">
             <objects>
                 <viewController id="hN3-yO-76i" customClass="CalculatorViewController" customModule="UtilityMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WMe-vA-WC5"/>
+                        <viewControllerLayoutGuide type="bottom" id="K9N-cc-UW4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GAw-1z-qtY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,15 +177,723 @@
             </objects>
             <point key="canvasLocation" x="565.21739130434787" y="855.97826086956525"/>
         </scene>
-        <!--View Controller-->
+        <!--Calculator Keypad-->
         <scene sceneID="y74-kv-69r">
             <objects>
-                <viewController id="5z6-Nc-tUG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8P9-eg-ET3">
+                <viewController id="5z6-Nc-tUG" customClass="CalculatorKeypad" customModule="UtilityMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gAg-W0-69R"/>
+                        <viewControllerLayoutGuide type="bottom" id="ha8-0k-qqc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7AH-bD-3X8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-BS-hWB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Rrr-ni-NUj">
+                                    <size key="itemSize" width="67" height="84"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryClear" id="G2g-HA-J2F" userLabel="MemoryClear" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MC" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-jP-IjR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="A6K-jP-IjR" secondAttribute="bottom" id="Efw-ab-iwZ"/>
+                                            <constraint firstItem="A6K-jP-IjR" firstAttribute="leading" secondItem="G2g-HA-J2F" secondAttribute="leading" id="K30-Fd-TqY"/>
+                                            <constraint firstItem="A6K-jP-IjR" firstAttribute="top" secondItem="G2g-HA-J2F" secondAttribute="top" id="d2t-0i-PPX"/>
+                                            <constraint firstAttribute="trailing" secondItem="A6K-jP-IjR" secondAttribute="trailing" id="u6m-3f-S4r"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buttonTitleLabel" destination="A6K-jP-IjR" id="RIP-Eg-XNI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BlankSpace" id="jQe-1L-zTE" userLabel="BlankSpace" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="69.333333333333329" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CE" id="Rwx-dS-DIf" userLabel="CE" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="138.66666666666666" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cM-fZ-eSb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6cM-fZ-eSb" secondAttribute="trailing" id="89g-xt-2sI"/>
+                                            <constraint firstItem="6cM-fZ-eSb" firstAttribute="top" secondItem="Rwx-dS-DIf" secondAttribute="top" id="WwQ-hh-uTg"/>
+                                            <constraint firstItem="6cM-fZ-eSb" firstAttribute="leading" secondItem="Rwx-dS-DIf" secondAttribute="leading" id="djR-V8-xNr"/>
+                                            <constraint firstAttribute="bottom" secondItem="6cM-fZ-eSb" secondAttribute="bottom" id="nvu-ke-j4s"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Clear" id="bCu-NF-dxG" userLabel="C" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="208.33333333333334" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-v0-cEY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5h9-v0-cEY" firstAttribute="leading" secondItem="bCu-NF-dxG" secondAttribute="leading" id="Btw-kK-G6f"/>
+                                            <constraint firstItem="5h9-v0-cEY" firstAttribute="top" secondItem="bCu-NF-dxG" secondAttribute="top" id="HiZ-Ro-mcW"/>
+                                            <constraint firstAttribute="trailing" secondItem="5h9-v0-cEY" secondAttribute="trailing" id="Hq5-Um-yv6"/>
+                                            <constraint firstAttribute="bottom" secondItem="5h9-v0-cEY" secondAttribute="bottom" id="vxd-W7-VaD"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BackSpace" id="l5E-cC-zXW" userLabel="BackSpace" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="277.66666666666669" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_backspace" translatesAutoresizingMaskIntoConstraints="NO" id="GWh-1n-vlF">
+                                                    <rect key="frame" x="13" y="22" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="ESf-k1-1qK"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Okt-LZ-U4n"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="GWh-1n-vlF" firstAttribute="centerX" secondItem="l5E-cC-zXW" secondAttribute="centerX" id="22I-wz-Gey"/>
+                                            <constraint firstItem="GWh-1n-vlF" firstAttribute="centerY" secondItem="l5E-cC-zXW" secondAttribute="centerY" id="3Dv-S3-9xT"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Divide" id="vjD-DP-4uv" userLabel="Divide" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="347" y="0.0" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="÷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adx-h5-NS5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="adx-h5-NS5" firstAttribute="leading" secondItem="vjD-DP-4uv" secondAttribute="leading" id="PjN-UH-uze"/>
+                                            <constraint firstItem="adx-h5-NS5" firstAttribute="top" secondItem="vjD-DP-4uv" secondAttribute="top" id="lcr-3F-MU8"/>
+                                            <constraint firstAttribute="bottom" secondItem="adx-h5-NS5" secondAttribute="bottom" id="teJ-Qz-nLk"/>
+                                            <constraint firstAttribute="trailing" secondItem="adx-h5-NS5" secondAttribute="trailing" id="wsU-OA-XWm"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryRecall" id="7kr-v0-vnN" userLabel="MemoryRecall" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDC-Ja-L3j">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="SDC-Ja-L3j" firstAttribute="leading" secondItem="7kr-v0-vnN" secondAttribute="leading" id="SlC-sJ-0gI"/>
+                                            <constraint firstItem="SDC-Ja-L3j" firstAttribute="top" secondItem="7kr-v0-vnN" secondAttribute="top" id="Vt7-fX-4WD"/>
+                                            <constraint firstAttribute="trailing" secondItem="SDC-Ja-L3j" secondAttribute="trailing" id="XYv-EE-Qo1"/>
+                                            <constraint firstAttribute="bottom" secondItem="SDC-Ja-L3j" secondAttribute="bottom" id="ju3-Mi-zLp"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buttonTitleLabel" destination="SDC-Ja-L3j" id="OXg-UV-Ut0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Square" id="swm-4U-DCH" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="69.333333333333329" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEs-mt-gMB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="VEs-mt-gMB" firstAttribute="leading" secondItem="swm-4U-DCH" secondAttribute="leading" id="4wr-vy-jZ3"/>
+                                            <constraint firstItem="VEs-mt-gMB" firstAttribute="top" secondItem="swm-4U-DCH" secondAttribute="top" id="DLP-dQ-Hm2"/>
+                                            <constraint firstAttribute="trailing" secondItem="VEs-mt-gMB" secondAttribute="trailing" id="OZu-ie-9VG"/>
+                                            <constraint firstAttribute="bottom" secondItem="VEs-mt-gMB" secondAttribute="bottom" id="ZHU-Af-ApX"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Seven" id="ISk-T9-Cjf" userLabel="Seven" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="138.66666666666666" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwG-qO-DKV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pwG-qO-DKV" secondAttribute="trailing" id="7jN-A4-oGX"/>
+                                            <constraint firstAttribute="bottom" secondItem="pwG-qO-DKV" secondAttribute="bottom" id="NDF-Mu-R9D"/>
+                                            <constraint firstItem="pwG-qO-DKV" firstAttribute="leading" secondItem="ISk-T9-Cjf" secondAttribute="leading" id="UQQ-dc-O4J"/>
+                                            <constraint firstItem="pwG-qO-DKV" firstAttribute="top" secondItem="ISk-T9-Cjf" secondAttribute="top" id="gMR-w1-7BU"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Eight" id="MWt-x3-b2a" userLabel="Eight" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="208.33333333333334" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH4-2B-qev">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="fH4-2B-qev" firstAttribute="leading" secondItem="MWt-x3-b2a" secondAttribute="leading" id="8zu-9m-Ko8"/>
+                                            <constraint firstItem="fH4-2B-qev" firstAttribute="top" secondItem="MWt-x3-b2a" secondAttribute="top" id="cTO-2N-wHR"/>
+                                            <constraint firstAttribute="bottom" secondItem="fH4-2B-qev" secondAttribute="bottom" id="dhs-1o-PpS"/>
+                                            <constraint firstAttribute="trailing" secondItem="fH4-2B-qev" secondAttribute="trailing" id="hhq-n1-QKO"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Nine" id="e1I-od-0D2" userLabel="Nine" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="277.66666666666669" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RH-Aq-gq0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="3RH-Aq-gq0" firstAttribute="top" secondItem="e1I-od-0D2" secondAttribute="top" id="QvD-7v-H1u"/>
+                                            <constraint firstAttribute="trailing" secondItem="3RH-Aq-gq0" secondAttribute="trailing" id="YQC-du-Y7g"/>
+                                            <constraint firstAttribute="bottom" secondItem="3RH-Aq-gq0" secondAttribute="bottom" id="noF-1b-LQF"/>
+                                            <constraint firstItem="3RH-Aq-gq0" firstAttribute="leading" secondItem="e1I-od-0D2" secondAttribute="leading" id="r6U-sH-TmC"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Multiply" id="7qr-YU-U5M" userLabel="Multiply" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="347" y="84" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="×" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIJ-5h-EtY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="VIJ-5h-EtY" firstAttribute="leading" secondItem="7qr-YU-U5M" secondAttribute="leading" id="M2f-pF-8Pt"/>
+                                            <constraint firstAttribute="trailing" secondItem="VIJ-5h-EtY" secondAttribute="trailing" id="OX6-bm-RT7"/>
+                                            <constraint firstItem="VIJ-5h-EtY" firstAttribute="top" secondItem="7qr-YU-U5M" secondAttribute="top" id="Xzf-WX-mN8"/>
+                                            <constraint firstAttribute="bottom" secondItem="VIJ-5h-EtY" secondAttribute="bottom" id="jEU-Mk-RfK"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryPlus" id="fDa-Eo-Tl4" userLabel="MemoryPlus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrG-PN-0kH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RrG-PN-0kH" secondAttribute="bottom" id="9pQ-Jc-TEa"/>
+                                            <constraint firstAttribute="trailing" secondItem="RrG-PN-0kH" secondAttribute="trailing" id="LCk-tR-FVZ"/>
+                                            <constraint firstItem="RrG-PN-0kH" firstAttribute="leading" secondItem="fDa-Eo-Tl4" secondAttribute="leading" id="O2V-Ij-tDS"/>
+                                            <constraint firstItem="RrG-PN-0kH" firstAttribute="top" secondItem="fDa-Eo-Tl4" secondAttribute="top" id="wGf-KX-Tfz"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Inverse" id="s9o-Rv-zDy" userLabel="1/x" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="69.333333333333329" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ro-32-buT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5Ro-32-buT" firstAttribute="top" secondItem="s9o-Rv-zDy" secondAttribute="top" id="Ocp-i6-8g6"/>
+                                            <constraint firstItem="5Ro-32-buT" firstAttribute="leading" secondItem="s9o-Rv-zDy" secondAttribute="leading" id="XjQ-Nq-VVT"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Ro-32-buT" secondAttribute="trailing" id="aQW-ij-jUg"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Ro-32-buT" secondAttribute="bottom" id="v4Y-2G-Xxp"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Four" id="MdM-XH-sfL" userLabel="Four" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="138.66666666666666" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78O-Tn-b1r">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="78O-Tn-b1r" firstAttribute="top" secondItem="MdM-XH-sfL" secondAttribute="top" id="JCp-jI-QZT"/>
+                                            <constraint firstAttribute="bottom" secondItem="78O-Tn-b1r" secondAttribute="bottom" id="XZD-rP-z4p"/>
+                                            <constraint firstItem="78O-Tn-b1r" firstAttribute="leading" secondItem="MdM-XH-sfL" secondAttribute="leading" id="jpG-ju-XAu"/>
+                                            <constraint firstAttribute="trailing" secondItem="78O-Tn-b1r" secondAttribute="trailing" id="r6B-jn-fvZ"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Five" id="chB-cr-IfD" userLabel="Five" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="208.33333333333334" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iks-gM-sHg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Iks-gM-sHg" secondAttribute="bottom" id="7ly-Kx-taL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iks-gM-sHg" secondAttribute="trailing" id="JoG-WI-oWY"/>
+                                            <constraint firstItem="Iks-gM-sHg" firstAttribute="top" secondItem="chB-cr-IfD" secondAttribute="top" id="MkO-0F-ugp"/>
+                                            <constraint firstItem="Iks-gM-sHg" firstAttribute="leading" secondItem="chB-cr-IfD" secondAttribute="leading" id="qvU-l9-7G0"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Six" id="Iul-gq-9tT" userLabel="Six" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="277.66666666666669" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-zG-g7K">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kIZ-zG-g7K" secondAttribute="bottom" id="R9C-hA-jCP"/>
+                                            <constraint firstItem="kIZ-zG-g7K" firstAttribute="leading" secondItem="Iul-gq-9tT" secondAttribute="leading" id="We9-8x-Gny"/>
+                                            <constraint firstItem="kIZ-zG-g7K" firstAttribute="top" secondItem="Iul-gq-9tT" secondAttribute="top" id="lTN-Uh-63E"/>
+                                            <constraint firstAttribute="trailing" secondItem="kIZ-zG-g7K" secondAttribute="trailing" id="ptk-WH-hTA"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Minus" id="YnO-nd-s8m" userLabel="Minus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="347" y="168" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-L1-HGG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="bdG-L1-HGG" secondAttribute="bottom" id="22L-cf-ZdM"/>
+                                            <constraint firstItem="bdG-L1-HGG" firstAttribute="top" secondItem="YnO-nd-s8m" secondAttribute="top" id="Hkm-FR-jHj"/>
+                                            <constraint firstAttribute="trailing" secondItem="bdG-L1-HGG" secondAttribute="trailing" id="poh-hV-F2E"/>
+                                            <constraint firstItem="bdG-L1-HGG" firstAttribute="leading" secondItem="YnO-nd-s8m" secondAttribute="leading" id="yaM-0n-GqF"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryMinus" id="9gw-SI-U82" userLabel="MemoryMinus" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksG-qM-YxF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ksG-qM-YxF" secondAttribute="trailing" id="38A-7G-M5d"/>
+                                            <constraint firstItem="ksG-qM-YxF" firstAttribute="leading" secondItem="9gw-SI-U82" secondAttribute="leading" id="cqO-2c-mi9"/>
+                                            <constraint firstItem="ksG-qM-YxF" firstAttribute="top" secondItem="9gw-SI-U82" secondAttribute="top" id="imK-kA-z9M"/>
+                                            <constraint firstAttribute="bottom" secondItem="ksG-qM-YxF" secondAttribute="bottom" id="wwi-D2-Yz4"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SquareRoot" id="dIW-cr-BzR" userLabel="SquareRoot" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="69.333333333333329" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_radical_sign" translatesAutoresizingMaskIntoConstraints="NO" id="8tx-uu-GP7">
+                                                    <rect key="frame" x="25" y="34" width="16" height="16"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="8tx-uu-GP7" firstAttribute="centerX" secondItem="dIW-cr-BzR" secondAttribute="centerX" id="BgN-FG-OHY"/>
+                                            <constraint firstItem="8tx-uu-GP7" firstAttribute="centerY" secondItem="dIW-cr-BzR" secondAttribute="centerY" id="gZM-Eo-dh8"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="One" id="jVC-aR-Mf2" userLabel="One" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="138.66666666666666" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1N-dh-BAC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="E1N-dh-BAC" secondAttribute="bottom" id="Cz9-c6-vpD"/>
+                                            <constraint firstAttribute="trailing" secondItem="E1N-dh-BAC" secondAttribute="trailing" id="MkA-Gz-phJ"/>
+                                            <constraint firstItem="E1N-dh-BAC" firstAttribute="leading" secondItem="jVC-aR-Mf2" secondAttribute="leading" id="Ogb-id-Lxo"/>
+                                            <constraint firstItem="E1N-dh-BAC" firstAttribute="top" secondItem="jVC-aR-Mf2" secondAttribute="top" id="fB4-rg-3d8"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Two" id="BAK-l5-KFF" userLabel="Two" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="208.33333333333334" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbG-Q8-BQk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="FbG-Q8-BQk" firstAttribute="top" secondItem="BAK-l5-KFF" secondAttribute="top" id="2Ay-V5-tkZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="FbG-Q8-BQk" secondAttribute="trailing" id="Lgq-CF-TLO"/>
+                                            <constraint firstItem="FbG-Q8-BQk" firstAttribute="leading" secondItem="BAK-l5-KFF" secondAttribute="leading" id="NJF-2L-NO2"/>
+                                            <constraint firstAttribute="bottom" secondItem="FbG-Q8-BQk" secondAttribute="bottom" id="QEz-K7-7TF"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Three" id="RAc-Ge-vtc" userLabel="Three" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="277.66666666666669" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUA-M2-x4D">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="AUA-M2-x4D" firstAttribute="top" secondItem="RAc-Ge-vtc" secondAttribute="top" id="1Z2-Ec-omF"/>
+                                            <constraint firstAttribute="bottom" secondItem="AUA-M2-x4D" secondAttribute="bottom" id="Nw9-dr-3uz"/>
+                                            <constraint firstItem="AUA-M2-x4D" firstAttribute="leading" secondItem="RAc-Ge-vtc" secondAttribute="leading" id="kX9-tc-Dzb"/>
+                                            <constraint firstAttribute="trailing" secondItem="AUA-M2-x4D" secondAttribute="trailing" id="ulX-sz-xQ0"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Add" id="YNS-uD-J25" userLabel="Add" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="347" y="252" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFa-XD-rhg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="VFa-XD-rhg" firstAttribute="leading" secondItem="YNS-uD-J25" secondAttribute="leading" id="Cwo-qm-KXq"/>
+                                            <constraint firstAttribute="bottom" secondItem="VFa-XD-rhg" secondAttribute="bottom" id="NjS-2H-d0M"/>
+                                            <constraint firstItem="VFa-XD-rhg" firstAttribute="top" secondItem="YNS-uD-J25" secondAttribute="top" id="Zqb-ev-ubS"/>
+                                            <constraint firstAttribute="trailing" secondItem="VFa-XD-rhg" secondAttribute="trailing" id="wTp-qK-Jy0"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoryStore" id="bML-w3-zyf" userLabel="MemoryStore" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMJ-rv-z5b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pMJ-rv-z5b" secondAttribute="trailing" id="4XW-RP-rYj"/>
+                                            <constraint firstItem="pMJ-rv-z5b" firstAttribute="leading" secondItem="bML-w3-zyf" secondAttribute="leading" id="E93-9C-LXe"/>
+                                            <constraint firstItem="pMJ-rv-z5b" firstAttribute="top" secondItem="bML-w3-zyf" secondAttribute="top" id="MKm-rj-36D"/>
+                                            <constraint firstAttribute="bottom" secondItem="pMJ-rv-z5b" secondAttribute="bottom" id="wyl-ZP-99C"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Percentage" id="Lpc-71-KXX" userLabel="Percentage" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="69.333333333333329" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGC-Ws-8fA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="XGC-Ws-8fA" firstAttribute="leading" secondItem="Lpc-71-KXX" secondAttribute="leading" id="1Tt-6Q-GwO"/>
+                                            <constraint firstAttribute="bottom" secondItem="XGC-Ws-8fA" secondAttribute="bottom" id="DIi-ZU-K30"/>
+                                            <constraint firstAttribute="trailing" secondItem="XGC-Ws-8fA" secondAttribute="trailing" id="hxE-F0-cS1"/>
+                                            <constraint firstItem="XGC-Ws-8fA" firstAttribute="top" secondItem="Lpc-71-KXX" secondAttribute="top" id="w5q-KI-qiX"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChangeSign" id="GgZ-PI-ueK" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="138.66666666666666" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+/-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-S9-F7C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Lg0-S9-F7C" firstAttribute="top" secondItem="GgZ-PI-ueK" secondAttribute="top" id="GOc-TN-4uP"/>
+                                            <constraint firstItem="Lg0-S9-F7C" firstAttribute="leading" secondItem="GgZ-PI-ueK" secondAttribute="leading" id="Jnv-SY-Ike"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lg0-S9-F7C" secondAttribute="bottom" id="YDr-fN-3Ww"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lg0-S9-F7C" secondAttribute="trailing" id="jDu-17-NuY"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Zero" id="SMV-XG-ipf" userLabel="Zero" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="208.33333333333334" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG9-ev-TbL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="JG9-ev-TbL" firstAttribute="top" secondItem="SMV-XG-ipf" secondAttribute="top" id="BUh-8X-cRc"/>
+                                            <constraint firstAttribute="trailing" secondItem="JG9-ev-TbL" secondAttribute="trailing" id="SrP-jk-riz"/>
+                                            <constraint firstItem="JG9-ev-TbL" firstAttribute="leading" secondItem="SMV-XG-ipf" secondAttribute="leading" id="gek-n2-k3e"/>
+                                            <constraint firstAttribute="bottom" secondItem="JG9-ev-TbL" secondAttribute="bottom" id="hDc-G6-2DF"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DecimalPoint" id="m4j-Zz-6u0" userLabel="DecimalPoint" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="277.66666666666669" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-c8-NY9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.2666666667" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Qxb-c8-NY9" secondAttribute="bottom" id="6e7-fI-KRX"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qxb-c8-NY9" secondAttribute="trailing" id="dTo-QZ-Fmq"/>
+                                            <constraint firstItem="Qxb-c8-NY9" firstAttribute="leading" secondItem="m4j-Zz-6u0" secondAttribute="leading" id="gVd-no-DwX"/>
+                                            <constraint firstItem="Qxb-c8-NY9" firstAttribute="top" secondItem="m4j-Zz-6u0" secondAttribute="top" id="hL4-9W-dr0"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EqualsTo" id="Fjh-Wm-mS7" userLabel="EqualsTo" customClass="KeypadButtonCell" customModule="UtilityMaster" customModuleProvider="target">
+                                        <rect key="frame" x="347" y="336" width="67" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-Vu-r9B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="84"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="CPP-Vu-r9B" secondAttribute="bottom" id="Fc2-cN-9Pz"/>
+                                            <constraint firstAttribute="trailing" secondItem="CPP-Vu-r9B" secondAttribute="trailing" id="eUP-y6-R1S"/>
+                                            <constraint firstItem="CPP-Vu-r9B" firstAttribute="leading" secondItem="Fjh-Wm-mS7" secondAttribute="leading" id="lPU-hy-6kh"/>
+                                            <constraint firstItem="CPP-Vu-r9B" firstAttribute="top" secondItem="Fjh-Wm-mS7" secondAttribute="top" id="sFY-iJ-ni0"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5z6-Nc-tUG" id="Sfo-Eo-K5B"/>
+                                    <outlet property="delegate" destination="5z6-Nc-tUG" id="KbF-FN-zPk"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.17254901959999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SQK-BS-hWB" secondAttribute="trailing" id="82Y-gA-byN"/>
+                            <constraint firstItem="SQK-BS-hWB" firstAttribute="top" secondItem="gAg-W0-69R" secondAttribute="bottom" id="NOE-sN-W73"/>
+                            <constraint firstItem="SQK-BS-hWB" firstAttribute="leading" secondItem="7AH-bD-3X8" secondAttribute="leading" id="tRi-CG-GpK"/>
+                            <constraint firstItem="ha8-0k-qqc" firstAttribute="top" secondItem="SQK-BS-hWB" secondAttribute="bottom" id="zHq-aA-EdW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="keypadCollectionView" destination="SQK-BS-hWB" id="R7g-7B-lCg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afk-e2-x2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,6 +903,10 @@
         <scene sceneID="fcb-Cz-4FX">
             <objects>
                 <viewController id="eai-X0-vrK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aIT-XC-Z3t"/>
+                        <viewControllerLayoutGuide type="bottom" id="qcP-cZ-2Zd"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xz1-0N-gv9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,6 +921,10 @@
         <scene sceneID="36L-G8-Z7U">
             <objects>
                 <viewController id="aHe-ff-xuX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HO9-Mt-5vx"/>
+                        <viewControllerLayoutGuide type="bottom" id="IaF-BR-hjx"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BnD-CK-kRu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,6 +939,10 @@
         <scene sceneID="F5Z-y3-Usx">
             <objects>
                 <viewController id="0ib-ca-v0a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eha-EC-X6s"/>
+                        <viewControllerLayoutGuide type="bottom" id="CAu-jc-F9m"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="scW-0G-pBf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,4 +954,8 @@
             <point key="canvasLocation" x="-899" y="-77"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_backspace" width="16" height="16"/>
+        <image name="ic_radical_sign" width="16" height="16"/>
+    </resources>
 </document>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		228829541FBD382A00E6E712 /* CalculatorKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228829531FBD382A00E6E712 /* CalculatorKeypad.swift */; };
+		228829561FBD38C700E6E712 /* CalculatorCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228829551FBD38C700E6E712 /* CalculatorCore.swift */; };
+		228829581FBD3CCF00E6E712 /* KeypadButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228829571FBD3CCF00E6E712 /* KeypadButtonCell.swift */; };
 		22E8DC3F1FBC1B2100AB0E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8DC3E1FBC1B2100AB0E01 /* AppDelegate.swift */; };
 		22E8DC441FBC1B2100AB0E01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E8DC421FBC1B2100AB0E01 /* Main.storyboard */; };
 		22E8DC471FBC1B2100AB0E01 /* UtilityMaster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22E8DC451FBC1B2100AB0E01 /* UtilityMaster.xcdatamodeld */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		228829531FBD382A00E6E712 /* CalculatorKeypad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorKeypad.swift; sourceTree = "<group>"; };
+		228829551FBD38C700E6E712 /* CalculatorCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorCore.swift; sourceTree = "<group>"; };
+		228829571FBD3CCF00E6E712 /* KeypadButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadButtonCell.swift; sourceTree = "<group>"; };
 		22E8DC3B1FBC1B2100AB0E01 /* UtilityMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UtilityMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E8DC3E1FBC1B2100AB0E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E8DC431FBC1B2100AB0E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				22E8DC721FBC2AB500AB0E01 /* CalculatorViewController.swift */,
+				228829531FBD382A00E6E712 /* CalculatorKeypad.swift */,
+				228829551FBD38C700E6E712 /* CalculatorCore.swift */,
+				228829571FBD3CCF00E6E712 /* KeypadButtonCell.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -278,10 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E8DC701FBC1C2900AB0E01 /* MainViewController.swift in Sources */,
+				228829561FBD38C700E6E712 /* CalculatorCore.swift in Sources */,
 				22E8DC471FBC1B2100AB0E01 /* UtilityMaster.xcdatamodeld in Sources */,
+				228829581FBD3CCF00E6E712 /* KeypadButtonCell.swift in Sources */,
 				22E8DC731FBC2AB500AB0E01 /* CalculatorViewController.swift in Sources */,
 				22E8DC751FBC321800AB0E01 /* AppSettings.swift in Sources */,
 				22E8DC3F1FBC1B2100AB0E01 /* AppDelegate.swift in Sources */,
+				228829541FBD382A00E6E712 /* CalculatorKeypad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +542,7 @@
 				22E8DC681FBC1B2100AB0E01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E8DC691FBC1B2100AB0E01 /* Build configuration list for PBXNativeTarget "UtilityMasterTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +551,7 @@
 				22E8DC6B1FBC1B2100AB0E01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22E8DC6C1FBC1B2100AB0E01 /* Build configuration list for PBXNativeTarget "UtilityMasterUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +560,7 @@
 				22E8DC6E1FBC1B2100AB0E01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
