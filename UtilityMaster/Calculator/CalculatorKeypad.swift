@@ -33,6 +33,15 @@ class CalculatorKeypad: UIViewController {
         self.keypadCollectionView.backgroundColor = UIColor.init(red: 37.0/255.0, green: 44.0/255.0, blue: 53.0/255.0, alpha: 1.0)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UIApplication.shared.statusBarOrientation.isPortrait {
+            self.updateCollectionViewLayoutForPortrait()
+        } else {
+            self.updateCollectionViewLayoutForLandscape()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
